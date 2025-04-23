@@ -1,0 +1,63 @@
+.home {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.imageBackground {
+    background-image: url('../assets/majors.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh; /* Make sure it covers the full viewport height */
+    width: 60%;
+  }
+  
+  .diagonalOverlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    background-color: #CEE0D0;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .textBox {
+    background-color: #305A35;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+  }
+
+.textBox h1 {
+    font-size: 3em; 
+    color: #e0c700;
+}
+
+.textBox p {
+    font-size: 2em; 
+}
+
+.getStartedBtn {
+    background-color: #203325;  
+    color: white; 
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+  
+.getStartedBtn:hover {
+    background-color: #e0c700;  
+}

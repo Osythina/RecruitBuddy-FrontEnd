@@ -1,0 +1,61 @@
+.scholarships {
+    padding: 20px;
+    color: #203325;
+    background-color: #CEE0D0;
+  }
+  
+  .searchContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .searchContainer input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filters select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .scholarshipTable {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .scholarshipTable table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .scholarshipTable th, .scholarshipTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .scholarshipTable th {
+    background-color: #305A35;
+  }
+  
+  .scholarshipTable td {
+    background-color: #fff;
+  }
+  
+  .scholarshipTable tr:hover {
+    background-color: #f1f1f1;
+  }

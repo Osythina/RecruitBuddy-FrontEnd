@@ -1,0 +1,66 @@
+.scheduleVisit {
+    padding: 20px;
+    color: #203325;
+    background-color: #CEE0D0;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .calendarContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .formField {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .formField label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formField input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #203325;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #155217;
+  }
+  
+  .confirmationMessage {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+  }
+  
+  .confirmationMessage h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
