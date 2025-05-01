@@ -38,11 +38,12 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 - Add your own database info (host, user, password, database) to the server file (mysql-server.js)
 4. Navigate in your directory to backend folder
 5. Start the server
+- (if using MySQL database)
   ```bash
-  node mysql-server.js (if using MySQL database)
+  node mysql-server.js
+- (if using CSVs files)
   ```bash
-   node server.js (if using CSVs files)
-
+  node server.js 
 ### Frontend Setup
 
 1. Navigate out of the backend folder.
