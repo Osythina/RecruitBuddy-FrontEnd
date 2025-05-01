@@ -16,7 +16,7 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 - Two data access modes:
   - **Primary**: Uses MySQL database for program, scholarship, and visit data
   - **Fallback**: Reads from CSV files if database is unavailable
-  - 
+    
 ## Getting Started
 
 ### Prerequisites
@@ -45,5 +45,8 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 
 1. Navigate out of the backend folder.
 2. Install dependencies
+   ```bash
    npm install
-3. npm start
+4. run
+   ```bash
+   npm start
