@@ -1,0 +1,32 @@
+name,department,duration,faculty_name,faculty_title,faculty_email,type
+Computer Science,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Electrical Engineering,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Mechanical Engineering,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Business Administration,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Marketing,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Finance,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Biology,Science,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Physics,Science,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Chemistry,Science,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Psychology,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Sociology,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+History,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Civil Engineering,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Chemical Engineering,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Artificial Intelligence,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Data Science,Engineering,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Environmental Science,Science,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Nursing,Health Sciences,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Medical Laboratory Science,Health Sciences,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Public Health,Health Sciences,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Human Resources,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Economics,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Social Work,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Fine Arts,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Philosophy,Arts,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Law,Law,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Criminal Justice,Law,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+Accounting,Business,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Healthcare Administration,Health Sciences,2 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Graduate
+Veterinary Science,Health Sciences,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate
+International Relations,Social Sciences,4 years,Dr. John Doe,Registration Chair,John.Doe@university.edu,Undergraduate

@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import useFetchData from '../components/useFetchData.js';
 import '../styles/scholar-info.css';
 
 function Scholarship() {
-  // Step 1: Set up state for search and filters
+
   const [searchTerm, setSearchTerm] = useState('');
-  const [scholarships, setScholarships] = useState([]);
-  const [scholarshipType, setScholarshipType] = useState('');
+  const [type, setScholarshipType] = useState('');
   const [eligibility, setEligibility] = useState('');
   const [amount, setAmount] = useState('');
+  const [filterEligibility, setFilterEligibility] = useState([]);
+  const [filterTypes, setFilterTypes] = useState([]);
+  const [filterAmounts, setFilterAmounts] = useState([]);
 
-  // Example scholarship data (replace with actual data or fetch from API)
-  const allScholarships = [
-    { name: 'STEM Excellence Scholarship', type: 'Merit-based', eligibility: 'STEM Students', amount: '$10,000' },
-    { name: 'Business Leadership Grant', type: 'Need-based', eligibility: 'Business Students', amount: '$5,000' },
-    { name: 'Diversity & Inclusion Fellowship', type: 'Merit-based', eligibility: 'All Students', amount: '$7,500' },
-    { name: 'Academic Achievement Scholarship', type: 'Merit-based', eligibility: 'All Students', amount: '$3,000' },
-    { name: 'International Student Grant', type: 'Need-based', eligibility: 'International Students', amount: '$4,000' },
-    // More scholarships...
-  ];
+  useEffect(() => {
+      fetchFilterOptions();
+    }, []);
 
-  // Step 2: Handle search and filter changes
+  const fetchFilterOptions = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/scholarships-filter-options');
+      const data = await response.json();
+      setFilterEligibility(data.eligibilities);
+      setFilterTypes(data.types);
+      setFilterAmounts(data.amounts);
+    } catch (error) {
+      console.error('Error fetching filter options:', error);
+    }
+  };
+
+  const params = {
+    searchTerm,
+    type,
+    amount,
+    eligibility,
+  };
+
+  const { data: scholarships, loading, error } = useFetchData('http://localhost:5000/search-scholarships', params);
+
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -36,61 +53,46 @@ function Scholarship() {
     setAmount(e.target.value);
   };
 
-  // Step 3: Filter the scholarships based on search term and filters
-  const filteredScholarships = allScholarships.filter((scholarship) => {
-    return (
-      scholarship.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (scholarshipType ? scholarship.type === scholarshipType : true) &&
-      (eligibility ? scholarship.eligibility === eligibility : true) &&
-      (amount ? scholarship.amount === amount : true)
-    );
-  });
-
-  // Step 4: Render the filtered scholarships in a table
   return (
     <div className="scholarships">
-      <div className="searchContainer">
+      <div className="searchScholarshipContainer">
         <h1>Search Scholarships</h1>
+        <div className="scholarshipSearchBar">
+          <input
+            type="text"
+            placeholder="Search Scholarships"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </div>
+        <div className="scholarshipFilters">
 
-        {/* Search Bar */}
-        <input
-          type="text"
-          placeholder="Search Scholarships"
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-
-        {/* Drop-down Filters */}
-        <div className="filters">
-          <select value={scholarshipType} onChange={handleTypeChange}>
+          <select value={type} onChange={handleTypeChange}>
             <option value="">All Types</option>
-            <option value="Merit-based">Merit-based</option>
-            <option value="Need-based">Need-based</option>
+            {filterTypes.map((type, index) => (
+              <option key={index} value={type}>{type}</option>
+            ))}
           </select>
 
           <select value={eligibility} onChange={handleEligibilityChange}>
             <option value="">All Eligibility</option>
-            <option value="STEM Students">STEM Students</option>
-            <option value="Business Students">Business Students</option>
-            <option value="International Students">International Students</option>
-            <option value="All Students">All Students</option>
-            {/* Add more eligibility options as needed */}
+            {filterEligibility.map((elig, index) => (
+              <option key={index} value={elig}>{elig}</option>
+            ))}
           </select>
 
           <select value={amount} onChange={handleAmountChange}>
             <option value="">All Amounts</option>
-            <option value="$3,000">$3,000</option>
-            <option value="$5,000">$5,000</option>
-            <option value="$7,500">$7,500</option>
-            <option value="$10,000">$10,000</option>
-            {/* Add more scholarship amounts as needed */}
+            {filterAmounts.map((am, index) => (
+              <option key={index} value={am}>{am}</option>
+            ))}
           </select>
         </div>
       </div>
 
-      {/* Scholarship Table */}
-      <div className="scholarshipTable">
-        <table>
+    <div className="tableContainer">
+      {loading ? <p>Loading programs...</p> : error ? <p>Error: {error}</p> : (
+       <table className="scholarshipTable">
           <thead>
             <tr>
               <th>Scholarship Name</th>
@@ -100,22 +102,17 @@ function Scholarship() {
             </tr>
           </thead>
           <tbody>
-            {filteredScholarships.length > 0 ? (
-              filteredScholarships.map((scholarship, index) => (
+            {scholarships.map((scholarship, index) => (
                 <tr key={index}>
                   <td>{scholarship.name}</td>
                   <td>{scholarship.type}</td>
                   <td>{scholarship.eligibility}</td>
                   <td>{scholarship.amount}</td>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="4">No scholarships found</td>
-              </tr>
-            )}
+              ))}
           </tbody>
         </table>
+      )}
       </div>
     </div>
   );

@@ -1,17 +1,18 @@
 .programs {
     padding: 20px;
+    color: #203325;
     background-color: #CEE0D0;
-  }
+}
   
-.searchContainer {
+.searchProgramsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 10px 0px 0px 5px;
     color: #203325;
 }
-  
-.searchContainer input {
+
+.searchProgramsContainer input {
     padding: 10px;
     margin: 10px 0;
     width: 100%;
@@ -19,25 +20,56 @@
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
+.searchProgramsContainer h1 {
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px 20px 0px;
+    color: #203325;
+}
+
+.searchProgramsBar {
+    width: 50%;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px 20px 0px;
+    color: #203325;
+}
   
-.filters {
+.programFilters {
     display: flex;
     gap: 10px;
 }
-  
-.filters select {
+
+.programFilters select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #CCC;
+}
+
+.tablesContainer {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    align-items: flex-start; 
+    margin-top: 20px;
 }
   
 .programTable {
+    border-collapse: collapse;
     margin-top: 20px;
-    width: 100%;
-    overflow-x: auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
   
 .programTable table {
+    display: flex;
     width: 100%;
     border-collapse: collapse;
 }
@@ -61,6 +93,13 @@
     background-color: #f1f1f1;
 }
 
+.Buttons {
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    justify-self: center;
+}
+
 .compareButton {
     margin: 15px 0;
     padding: 10px 20px;
@@ -70,29 +109,63 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.instructions-button{
+    margin: 40px 0px 0px 20px;
+    padding: 15px 20px;
+    background-color: #203325;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resetButton{
+    margin: 40px 0px 0px 0px;
+    padding: 15px 20px;
+    background-color: #203325;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 25px;
+    color: #203325;
+}
   
 .comparison-table {
-    width: 100%;
+    width: 40%;
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #f5f5f5;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    justify-self: center;
 }
-  
-.comparison-table th,
-.comparison-table td {
-    padding: 16px 20px;
+
+.comparison-table table {
+    display: flex;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid #ddd;
 }
   
 .comparison-table th {
-    background-color: #203325;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
+    background-color: #305A35;
+    color: white
+}
+
+
+.comparison-table td {
+    background-color: #fff;
 }
   
 .comparison-table tr:hover {
@@ -105,4 +178,52 @@
       padding: 12px;
       font-size: 14px;
     }
+}
+
+.applicationInstructions {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 20px;
+    color: #203325;
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.applicationInstructions h3 {
+    font-size: 30px;
+    color: #203325;
+    margin: 20px 0px 15px 35px;
+}
+
+.applicationInstructions h4 {
+    font-size: 20px;
+    color: #203325;
+    margin: 15px 20px 20px 35px;
+}
+
+.applicationInstructions h5 {
+    font-size: 25px;
+    color: #203325;
+    margin: 20px 0px 20px 35px;
+}
+
+.applicationInstructions p {
+    font-size: 20px;
+    color: #203325;
+    margin: 20px 0px 20px 35px;
+}
+
+.visit-button {
+    font-size: 20px;
+    margin: 15px 0;
+    padding: 10px 20px;
+    background-color: #203325;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 10px 20px 35px;
 }

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // for calendar styling
+import 'react-calendar/dist/Calendar.css';
 import '../styles/schedule-visit.css';
 
 function ScheduleVisit() {
+
   const [selectedDate, setSelectedDate] = useState(null);
   const [contactInfo, setContactInfo] = useState({
     name: '',
@@ -11,52 +12,77 @@ function ScheduleVisit() {
     department: ''
   });
   const [confirmation, setConfirmation] = useState(null);
+  const [bookedDates, setBookedDates] = useState([]);
 
-  // This Handle calendar date change
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  // Handle form field changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setContactInfo({
-      ...contactInfo,
-      [name]: value
-    });
+    setContactInfo({...contactInfo, [name]: value });
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+
     e.preventDefault();
 
-    // Check if all fields are filled
-    if (selectedDate && contactInfo.name && contactInfo.email && contactInfo.department) {
-      setConfirmation({
-        message: 'Your visit request has been successfully submitted!',
-        details: {
-          date: selectedDate.toDateString(),
-          department: contactInfo.department
-        }
-      });
-    } else {
-      setConfirmation({
-        message: 'Please fill in all the details and select a date.',
-        details: null
-      });
+    if (!contactInfo.name || !contactInfo.email || !contactInfo.department || !selectedDate) {
+      alert('Please fill in all the fields.');
+      return;
     }
+
+    const visitData = {
+      name: contactInfo.name,
+      email: contactInfo.email,
+      date: selectedDate,
+      department: contactInfo.department,
+    };
+
+    try {
+
+      const response = await fetch('http://localhost:5000/save-visit', {
+        method: 'POST',
+        headers: {
+          'Content-Type' : 'application/json',
+        },
+        body: JSON.stringify(visitData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setConfirmation({
+          message: 'Your visit request has been successfully submitted!',
+          details: {
+            date: selectedDate.toDateString(),
+            department: contactInfo.department
+          }
+        });
+      } else {
+        alert(data.message);
+      }
+    }catch (error) {
+      alert('There was an error submitting your visit request.');
+    } 
+  };
+
+  const tileDisabled = ({ date, view}) => {
+    const formattedDate = date.toDateString(); 
+    return bookedDates.includes(formattedDate) || date.getDay() === 6 || date.getDay() === 0;
   };
 
   return (
     <div className="scheduleVisit">
       <h1>Schedule Your Visit</h1>
 
-      {/* Calendar for date selection */}
       <div className="calendarContainer">
         <Calendar
           onChange={handleDateChange}
           value={selectedDate}
-          minDate={new Date()} // Disable past dates
+          minDate={new Date()} 
+          tileDisabled={tileDisabled} //
         />
       </div>
 
@@ -73,9 +99,6 @@ function ScheduleVisit() {
                 onChange={handleInputChange}
                 required
               />
-            </div>
-
-            <div className="formField">
               <label>Email</label>
               <input
                 type="email"
@@ -84,9 +107,6 @@ function ScheduleVisit() {
                 onChange={handleInputChange}
                 required
               />
-            </div>
-
-            <div className="formField">
               <label>Department</label>
               <input
                 type="text"
@@ -97,7 +117,7 @@ function ScheduleVisit() {
               />
             </div>
 
-            <button type="submit">Submit Request</button>
+            <button type="submit">Submit Visit Request</button>
           </form>
         </div>
       )}

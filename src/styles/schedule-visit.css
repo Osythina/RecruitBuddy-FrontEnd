@@ -1,66 +1,135 @@
 .scheduleVisit {
-    padding: 20px;
-    color: #203325;
-    background-color: #CEE0D0;
-  }
+  padding: 20px;
+  color: #203325;
+  background-color: #CEE0D0;
+}
   
-  h1 {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+}
   
-  .calendarContainer {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
+.calendarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.react-calendar__tile {
+  background-color: #c7e1c8; 
+  color: #203325; 
+  border-radius: 0px; 
+}
+
+.react-calendar__tile--active {
+  background-color: #155217 !important;  
+  color: white !important;  
+  border-radius: 50%;  
+}
+
+.react-calendar__tile--active:hover {
+  background-color: #9cdc9e !important;
+  color: black !important; 
+}
+
+.react-calendar__month-view__days {
+  background-color: #ccdfcd; 
+  color: black; 
+  font-weight: bold;
+  text-align: center;
+}
+
+.react-calendar__month-view {
+  background-color:#9cdc9e; 
+  color: #203325; 
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.react-calendar .react-calendar__navigation__label {
+  font-size: 1.1rem; 
+  font-weight: bold;
+  background-color: #155217; 
+  color: #FFEB3B; 
+  padding: 8px 15px; 
+  border-radius: 5px; 
+  margin: 3px;
+}
+
+.react-calendar .react-calendar__navigation__label:hover{
+  background-color: #a7deaa !important;
+  color:#203325
+}
+
+.react-calendar .react-calendar__navigation__arrow {
+  background-color: #155217;
+  color: #FFEB3B; 
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 3px;
+}
+
+.react-calendar .react-calendar__navigation__arrow:hover {
+  background-color: #a7deaa !important;
+  color:#155217
+}
+
+.react-calendar__tile--now {
+  background-color: #a7deaa; 
+  color: #203325;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
   
-  .formContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 500px;
-    margin: 0 auto;
-  }
+.formField {
+  background-color: #ccdfcd;
+  margin-bottom: 15px;
+  width: 100%;
+}
   
-  .formField {
-    margin-bottom: 15px;
-    width: 100%;
-  }
+.formField label {
+  display: block;
+  margin-bottom: 5px;
+}
   
-  .formField label {
-    display: block;
-    margin-bottom: 5px;
-  }
+.formField input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
   
-  .formField input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+button {
+  padding: 10px 20px;
+  background-color: #203325;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
   
-  button {
-    padding: 10px 20px;
-    background-color: #203325;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+button:hover {
+  background-color: #155217;
+}
   
-  button:hover {
-    background-color: #155217;
-  }
+.confirmationMessage {
+  color:#203325;
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
   
-  .confirmationMessage {
-    margin-top: 20px;
-    text-align: center;
-    padding: 15px;
-    border: 1px solid #ccc;
-    background-color: #f4f4f4;
-  }
-  
-  .confirmationMessage h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+.confirmationMessage h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

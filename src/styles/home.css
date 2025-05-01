@@ -9,7 +9,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; /* Make sure it covers the full viewport height */
+    height: 100vh; 
     width: 60%;
   }
   
