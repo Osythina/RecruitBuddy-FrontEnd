@@ -47,9 +47,6 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 ### Frontend Setup
 
 1. Navigate out of the backend folder.
-2. Install dependencies
-   ```bash
-   npm install
 4. run
    ```bash
    npm start
