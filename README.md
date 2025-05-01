@@ -22,6 +22,9 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 ### Prerequisites
 - Node.js & npm
 - MySQL Server
+- React.js
+- react-router-dom
+- react-calendar
 
 ### Backend Setup
 
@@ -37,17 +40,6 @@ RecruitmentBuddy is a web application that allows prospective students to explor
 5. Start the server
    node mysql-server.js (if using MySQL database)
    node server.js (if using CSVs files)
-
-### Front-End
-- React library
-
-## Getting Started
-
-### Prerequisites
-- React.js
-- Node.js
-- react-router-dom
-- react-calendar
 
 ### Frontend Setup
 
