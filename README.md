@@ -32,13 +32,15 @@ RecruitmentBuddy is a web application that allows prospective students to explor
    ```bash
    npm install
 2. Set up MySQL:
-   Create a database (e.g., recruitmentbuddy)
-   Create the necessary tables: programs, scholarships, visits
-   Import data from the CSVs into the database using the provided files (import-programs.js, import-scholarships.js, import-visits.js)
-3. Add your own database in for (host, user, password, database) to the server file (mysql-server.js)
+- Create a database (e.g., recruitmentbuddy)
+- Create the necessary tables: programs, scholarships, visits
+- Import data from the CSVs into the database using the provided files (import-programs.js, import-scholarships.js, import-visits.js)
+- Add your own database info (host, user, password, database) to the server file (mysql-server.js)
 4. Navigate in your directory to backend folder
 5. Start the server
-   node mysql-server.js (if using MySQL database)
+  ```bash
+  node mysql-server.js (if using MySQL database)
+  ```bash
    node server.js (if using CSVs files)
 
 ### Frontend Setup
